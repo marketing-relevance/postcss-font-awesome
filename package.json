@@ -16,25 +16,34 @@
   },
   "homepage": "https://github.com/marketing-relevance/postcss-font-awesome",
   "dependencies": {
+    "n-readlines": "^1.0.0"
+  },
+  "peerDependencies": {
     "postcss": "^7.0.0"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "@logux/eslint-config": "^40.0.5",
     "ava": "^3.13.0",
     "eslint": "^7.11.0",
-    "eslint-config-postcss": "^4.0.0"
+    "eslint-ci": "^1.0.0",
+    "eslint-config-postcss": "^4.0.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prefer-let": "^1.1.0",
+    "eslint-plugin-prettierx": "^0.14.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-unicorn": "^22.0.0"
   },
   "scripts": {
-    "test": "ava && eslint *.js"
+    "test": "ava && eslint-ci ."
   },
   "eslintConfig": {
-    "extends": "eslint-config-postcss/es6",
-    "rules": {
-      "max-len": [
-        1,
-        80,
-        4
-      ]
-    }
+    "extends": "eslint-config-postcss"
   },
   "main": "index.js"
 }

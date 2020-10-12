@@ -1,52 +1,39 @@
-var path = require('path');
-var fs = require('fs');
-var https = require('https');
+const path = require('path')
+const LineByLine = require('n-readlines')
 
-var config = {
-    src: path.resolve(
-        __dirname, 'node_modules', 'font-awesome', 'scss', '_variables.scss'
-    ),
-    dest: './icons.json'
-};
-
-var varsUrl = 'https://raw.githubusercontent.com/FortAwesome/Font-Awesome/';
-varsUrl += 'fa-4/scss/_variables.scss';
-
-https.request(varsUrl, function (res) {
-    if (res.statusCode !== 200) {
-        throw new Error(
-            'Failed to fetch variables from Github, got HTTP ' + res.statusCode
-        );
+function generateIconConfig (opts = { fontAwesomePro: false }) {
+    let config = {
+        src: path.resolve(
+            'node_modules',
+            '@fortawesome',
+            opts.fontAwesomePro ? 'fontawesome-pro' : 'fontawesome-free',
+            'scss',
+            '_variables.scss'
+        )
     }
 
-    var data = '';
-    res.setEncoding('utf8');
-    res.on('data', function (chunk) {
-        data += chunk;
-    });
+    let icons = {}
 
-    res.on('end', function () {
-        var lines = data.split('\n').filter(n => {
-            return n !== undefined && n !== '' && n.startsWith('$fa-var-');
-        });
-        var icons = {};
+    let liner = new LineByLine(config.src)
+    let line = null
 
-        for (var line of lines) {
-            var icon = line.substring(0, line.indexOf(':'))
-                    .replace('$fa-var-', '');
+    while ((line = liner.next())) {
+        let str = line.toString()
 
-            var code = line.substring(line.indexOf('\\f'), line.indexOf('";'))
-                    .replace('\\f', '');
+        if (str !== undefined && str !== '' && str.startsWith('$fa-var-')) {
+            let icon = str
+                .substring(0, str.indexOf(':'))
+                .replace('$fa-var-', '')
 
-            icons[icon] = code;
+            let code = str
+                .substring(str.indexOf('\\f'), str.indexOf(';'))
+                .replace('\\f', '')
+
+            icons[icon] = code
         }
+    }
 
-        fs.writeFile(config.dest, JSON.stringify(icons), function (error) {
-            if (error) {
-                throw error;
-            }
+    return icons
+}
 
-            console.log('Icons file created');
-        });
-    });
-}).end();
+module.exports = generateIconConfig
