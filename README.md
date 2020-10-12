@@ -20,59 +20,50 @@
 #### After
 ```css
 .foo::before {
-  font-family: FontAwesome;
   content: '\f030';
+}
+```
+
+The `font-family` and `font-weight` attributes will need to be supplied manually in your CSS, as the plugin will not provide those values.
+This ensures the plugin can be as flexible as possible, and is better handled using something like CSS custom variables just in case Font Awesome changes these values in the future.
+
+### Example
+```css
+:root {
+    --fa-light: 300;
+    --fa-brand: 400;
+    --fa-regular: 400;
+    --fa-solid: 900;
+    --fa-duotone: 900;
+
+    --fa-font-family: 'Font Awesome 5 Free';
+    --fa-font-family-brands: 'Font Awesome 5 Brands';
+    --fa-font-family-duotone: 'Font Awesome 5 Duotone';
+}
+
+.icon::before {
+    font-family: var(--fa-font-family);
+    font-weight: var(--fa-solid);
+    font-awesome: camera;
 }
 ```
 
 ## Options
 
-### Replacement
-By default the plugin just searches for the icon you want and adds the Font Awesome font family as well as the unicode characters relative to that icon inside a `content: `.
-
-With the replacement option you can use it as a full class replacement.
-
-#### Before
-```css
-.foo {
-  font-awesome: camera;
-}
+### Font Awesome Pro
+By default the plugin will use the free version of Font Awesome. If you are using the pro version of Font Awesome, simply set the option:
+```js
+require('postcss-font-awesome')({
+    fontAwesomePro: true, // defaults to false
+})
 ```
-
-#### After
-```css
-.foo {
-  display: inline-block;
-  font: normal normal normal FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.foo::before {
-  font-family: FontAwesome;
-  content: '\f030';
-}
-```
-
-This means you won't have to add have `<i class="fa fa-camera"></i>` you can just use `<i class="foo"></i>`.
-
-There is 1 downside to this method though, it creates a bit more CSS duplication as
-```css
-  display: inline-block;
-  font: normal normal normal FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-```
-
-Gets added everytime you use it instead of being on a single `.fa` class.
 
 ## Usage
 
 ```js
-postcss([ require('postcss-font-awesome') ])
+postcss([ require('postcss-font-awesome')({
+    fontAwesomePro: false, // defaults to false
+}) ])
 ```
 
 See [PostCSS] docs for examples for your environment.
