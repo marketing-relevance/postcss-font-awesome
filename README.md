@@ -6,9 +6,9 @@
 
 [PostCSS] plugin to pull in a Font Awesome's icon unicode using `content`.
 
-[PostCSS]: https://github.com/postcss/postcss
-[ci-img]:  https://travis-ci.org/dan-gamble/postcss-font-awesome.svg
-[ci]:      https://travis-ci.org/dan-gamble/postcss-font-awesome
+[PostCSS]: https://github.com/marketing-relevance/postcss-font-awesome
+[ci-img]:  https://github.com/marketing-relevance/postcss-font-awesome/workflows/Test/badge.svg
+[ci]:      https://github.com/marketing-relevance/postcss-font-awesome/actions
 
 #### Before
 ```css
