@@ -1,6 +1,6 @@
 {
   "name": "postcss-font-awesome",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "PostCSS plugin to pull in a Font Awesome's icon unicode",
   "keywords": [
     "postcss",
@@ -8,27 +8,26 @@
     "postcss-plugin",
     "font awesome"
   ],
-  "author": "Dan Gamble <dangamble89@gmail.com>",
+  "author": "Eric Pfeiffer <eric@marketingrelevance.com>",
   "license": "MIT",
-  "repository": "dan-gamble/postcss-font-awesome",
+  "repository": "https://github.com/marketing-relevance/postcss-font-awesome",
   "bugs": {
-    "url": "https://github.com/dan-gamble/postcss-font-awesome/issues"
+    "url": "https://github.com/marketing-relevance/postcss-font-awesome/issues"
   },
-  "homepage": "https://github.com/dan-gamble/postcss-font-awesome",
+  "homepage": "https://github.com/marketing-relevance/postcss-font-awesome",
   "dependencies": {
-    "postcss": "^5.0.14"
+    "postcss": "^7.0.0"
   },
   "devDependencies": {
-    "ava": "^0.14.0",
-    "eslint": "^2.10.2",
-    "eslint-config-postcss": "^2.0.2"
+    "ava": "^3.13.0",
+    "eslint": "^7.11.0",
+    "eslint-config-postcss": "^4.0.0"
   },
   "scripts": {
-    "test": "ava && eslint *.js",
-    "postinstall": "node ./generateIconConfig.js"
+    "test": "ava && eslint *.js"
   },
   "eslintConfig": {
-    "extends": "eslint-config-postcss/es5",
+    "extends": "eslint-config-postcss/es6",
     "rules": {
       "max-len": [
         1,
@@ -36,5 +35,6 @@
         4
       ]
     }
-  }
+  },
+  "main": "index.js"
 }
