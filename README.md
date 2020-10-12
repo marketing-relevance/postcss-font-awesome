@@ -53,7 +53,7 @@ This ensures the plugin can be as flexible as possible, and is better handled us
 ### Font Awesome Pro
 By default the plugin will use the free version of Font Awesome. If you are using the pro version of Font Awesome, simply set the option:
 ```js
-require('postcss-font-awesome')({
+require('@marketing-relevance/postcss-font-awesome')({
     fontAwesomePro: true, // defaults to false
 })
 ```
@@ -61,7 +61,7 @@ require('postcss-font-awesome')({
 ## Usage
 
 ```js
-postcss([ require('postcss-font-awesome')({
+postcss([ require('@marketing-relevance/postcss-font-awesome')({
     fontAwesomePro: false, // defaults to false
 }) ])
 ```
