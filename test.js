@@ -75,7 +75,7 @@ test('extending the content, replacing inline fa- tags middle', t => {
 test('extending the content, replacing inline fa- tags with a hyphen', t => {
     return run(
         t,
-        "a::before{ content: 'Test fa-camera Test'}",
-        "a::before{ content: 'Test \\f030 Test'}"
+        "a::before{ content: 'Test fa-arrow-left Test'}",
+        "a::before{ content: 'Test \\f060 Test'}"
     )
 })
