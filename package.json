@@ -45,5 +45,6 @@
   "eslintConfig": {
     "extends": "eslint-config-postcss"
   },
-  "main": "index.js"
+  "main": "index.js",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
