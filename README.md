@@ -66,4 +66,6 @@ postcss([ require('@marketing-relevance/postcss-font-awesome')({
 }) ])
 ```
 
+Font Awesome must be installed using a package manager in order for this plugin to work: https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers
+
 See [PostCSS] docs for examples for your environment.
