@@ -69,3 +69,7 @@ postcss([ require('@marketing-relevance/postcss-font-awesome')({
 Font Awesome must be installed using a package manager in order for this plugin to work: https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers
 
 See [PostCSS] docs for examples for your environment.
+
+## TODO
+
+[ ] Maybe add an option to use the font awesome API and supply an api key to fetch pro icons so the NPM package doesn't need to be installed. Useful when using font awesome's kit's or CDN.
