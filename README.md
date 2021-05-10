@@ -72,4 +72,4 @@ See [PostCSS] docs for examples for your environment.
 
 ## TODO
 
-[ ] Maybe add an option to use the font awesome API and supply an api key to fetch pro icons so the NPM package doesn't need to be installed. Useful when using font awesome's kit's or CDN.
+- [ ] Maybe add an option to use the font awesome API and supply an api key to fetch pro icons so the NPM package doesn't need to be installed. Useful when using font awesome's kit's or CDN.
