@@ -19,7 +19,7 @@
     "n-readlines": "^1.0.1"
   },
   "peerDependencies": {
-    "postcss": "^7.0.0"
+    "postcss": "^8.0.9"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
@@ -37,7 +37,7 @@
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-standard": "^5.0.0",
     "eslint-plugin-unicorn": "^32.0.1",
-    "postcss": "^7.0.0"
+    "postcss": "^8.3.0"
   },
   "scripts": {
     "test": "ava && eslint-ci ."
